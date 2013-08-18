@@ -1,0 +1,1046 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection*
+The optimal regulator problem with a quadratic return function and nonlinear
+ transition functions
+\end_layout
+
+\begin_layout Standard
+The objective function is:
+\begin_inset Formula 
+\[
+W=-E_{0}\left[\sum_{t=1}^{T}\beta^{t}[(\theta_{t}-a_{t})'Q_{t}(\theta_{t}-a_{t})+x_{t}'R_{t}x_{t}]\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\theta_{t}$
+\end_inset
+
+ is defined as the 
+\bar under
+logarithm
+\bar default
+ of the vector of skills at time 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $a_{t}$
+\end_inset
+
+ is the targets of skill accumulation set for period 
+\begin_inset Formula $t$
+\end_inset
+
+, and 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ is the vector of human capital investments made at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ And 
+\begin_inset Formula $Q_{t}$
+\end_inset
+
+ is an 
+\begin_inset Formula $m\times m$
+\end_inset
+
+ positive semidefinite symmetric matrix, and 
+\begin_inset Formula $R_{t}$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ positive definite symmetric matrix.
+ 
+\end_layout
+
+\begin_layout Standard
+For simplicity, we consider the case with only cognitive and non-cognitive
+ skills, i.e.
+ 
+\begin_inset Formula $m=2$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{t}=(\theta_{C,t},\theta_{N,t})$
+\end_inset
+
+ and the case with only money and time investments, i.e.
+ 
+\begin_inset Formula $n=2$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{t}=(I_{t},h_{t})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then, consider the CES human capital production functions, which are similar
+ to the ones used in Cunha, Heckman and Schennach (2010).
+ 
+\size small
+
+\begin_inset Formula 
+\begin{eqnarray}
+\theta_{C,t} & = & \frac{1}{\phi_{C,t}}ln\left(\gamma_{C,t,1}exp(\phi_{C,t}\theta_{C,t-1})+\gamma_{C,t,2}exp(\phi_{C,t}\theta_{N,t-1})+\gamma_{C,t,3}exp(\phi_{C,t}ln(I_{t}))+\gamma_{C,t,4}exp(\phi_{C,t}ln(h_{t}))\right)+\epsilon_{C,t}\nonumber \\
+ & \equiv & \Phi_{C,t}(\theta_{C,t-1},\theta_{N,t-1},I_{t},h_{t})+\epsilon_{C,t}\label{eq:C}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\begin_inset Formula 
+\begin{eqnarray}
+\theta_{N,t} & = & \frac{1}{\phi_{N,t}}ln\left(\gamma_{N,t,1}exp(\phi_{N,t}\theta_{C,t-1})+\gamma_{N,t,2}exp(\phi_{N,t}\theta_{N,t-1})+\gamma_{N,t,3}exp(\phi_{N,t}ln(I_{t}))+\gamma_{N,t,4}exp(\phi_{N,t}ln(h_{t}))\right)+\epsilon_{N,t}\nonumber \\
+ & \equiv & \Phi_{N,t}(\theta_{C,t-1},\theta_{N,t-1},I_{t},h_{t})+\epsilon_{N,t}\label{eq:N}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\phi$
+\end_inset
+
+
+\begin_inset Formula $\in(-\infty,1]$
+\end_inset
+
+ determines the degree substitutability in the human capital production
+ process: 
+\begin_inset Formula $\frac{1}{1-\phi}$
+\end_inset
+
+.
+ Notice that the substitutability of inputs in producing each skill is assumed
+ to be the same, which can be relaxed later by using, e.g.
+ nested CES models.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 1:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Start with initial guesses 
+\begin_inset Formula $\tilde{I}_{1},...,\tilde{I}_{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{h}_{1},...,\tilde{h}_{T}$
+\end_inset
+
+.
+ For example, guess that 
+\begin_inset Formula $\tilde{I}_{1}=...=\tilde{I}_{T}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{h}_{1}=...=\tilde{h}_{T}=0$
+\end_inset
+
+.
+ Set 
+\begin_inset Formula $\epsilon_{C,t}=\epsilon_{N,t}=0$
+\end_inset
+
+.
+ Then with given initial endowments for each kid, the vector of skills in
+ each period can be calculated by using Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:C"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:N"
+
+\end_inset
+
+.
+ Denote the generated level of skills by 
+\begin_inset Formula $\theta_{C,1}^{0},...,\theta_{C,T}^{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{N,1}^{0},...,\theta_{N,T}^{0}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 2:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For each period, linearize the CES human capital production functions at
+ 
+\begin_inset Formula $\theta_{C,t-1}^{0}$
+\end_inset
+
+,
+\begin_inset Formula $\mbox{\theta}_{N,t-1}^{0}$
+\end_inset
+
+
+\begin_inset Formula $\tilde{I}_{t}$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{h}_{t}$
+\end_inset
+
+:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\theta_{C,t} & = & \Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})+\frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{C,t-1}}(\theta_{C,t-1}-\theta_{C,t-1}^{0})+\frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{N,t-1}}(\theta_{N,t-1}-\theta_{N,t-1}^{0})\\
+ &  & +\frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial I_{t}}(I_{t}-\tilde{I}_{t})+\frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial h_{t}}(h_{t}-\tilde{h}_{t})+\eta_{C,t}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Formula 
+\begin{eqnarray*}
+\theta_{N,t} & = & \Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})+\frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{C,t-1}}(\theta_{C,t-1}-\theta_{C,t-1}^{0})+\frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{N,t-1}}(\theta_{N,t-1}-\theta_{N,t-1}^{0})\\
+ &  & +\frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial I_{t}}(I_{t}-\tilde{I}_{t})+\frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial h_{t}}(h_{t}-\tilde{h}_{t})+\eta_{N,t}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we have:
+\begin_inset Formula 
+\[
+\theta_{t}=A_{t}\theta_{t-1}+C_{t}x_{t}+b_{t}+u_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where:
+\begin_inset Formula 
+\[
+A_{t}\equiv\left[\begin{array}{cc}
+\frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{C,t-1}} & \frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{N,t-1}}\\
+\frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{C,t-1}} & \frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial\theta_{N,t-1}}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+C_{t}\equiv\left[\begin{array}{cc}
+\frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial I_{t}} & \frac{\partial\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial h_{t}}\\
+\frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial I_{t}} & \frac{\partial\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})}{\partial h_{t}}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\begin_inset Formula 
+\begin{eqnarray*}
+b_{t} & \equiv & \left[\begin{array}{c}
+\Phi_{C,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})\\
+\Phi_{N,t}(\theta_{C,t-1}^{0},\theta_{N,t-1}^{0},\tilde{I}_{t},\tilde{h}_{t})
+\end{array}\right]-A_{t}\left[\begin{array}{c}
+\theta_{C,t-1}^{0}\\
+\theta_{N,t-1}^{0}
+\end{array}\right]-C_{t}\left[\begin{array}{c}
+\tilde{I}_{t}\\
+\tilde{h}_{t}
+\end{array}\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+u_{t}\equiv\left[\begin{array}{c}
+\eta_{C,t}\\
+\eta_{N,t}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Compute the reduced form coefficients 
+\begin_inset Formula $A_{t},\ C_{t},$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{t}$
+\end_inset
+
+ for 
+\begin_inset Formula $t=1,...,T$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 3: 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define the value function in each period:
+\begin_inset Formula 
+\[
+V_{T}=\beta E_{T-1}[-(\theta_{T}-a_{T})'Q_{T}(\theta_{T}-a_{T})-x_{T}'R_{T}x_{T}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+V_{t}=\beta E_{t-1}\left[-(\theta_{t}-a_{t})'Q_{t}(\theta_{t}-a_{t})-x_{t}'R_{t}x_{t}+V_{t+1}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for 
+\begin_inset Formula $t=1,...,T-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So the value function at time 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $V_{t}$
+\end_inset
+
+, can be interpreted as the present value of future returns evaluated at
+ time 
+\begin_inset Formula $t-1$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 4:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider the last period first.
+ In period 
+\begin_inset Formula $T$
+\end_inset
+
+, the optimization problem is:
+\begin_inset Formula 
+\begin{gather*}
+\underset{x_{T}}{max}\ V_{T}=\beta E_{T-1}[-\theta'_{T}Q_{T}\theta_{T}+2\theta'_{T}Q_{T}a_{T}-a'_{T}Q_{T}a_{T}-x'_{T}R_{T}x_{T}]\\
+s.t.\ \theta_{T}=A_{T}\theta_{T-1}+C_{T}x_{T}+b_{T}+u_{T}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula 
+\[
+H_{T}\equiv-Q_{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+h_{T}\equiv-Q_{T}a_{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+c_{T}\equiv-a'_{T}Q_{T}a_{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+J_{T}\equiv-R_{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Compute the coefficients: 
+\begin_inset Formula $H_{T},\ h_{T},\ c_{T},\ J_{T}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 5:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recall that the optimization problem in period 
+\begin_inset Formula $T$
+\end_inset
+
+ is:
+\begin_inset Formula 
+\begin{gather*}
+\underset{x_{T}}{max}\ V_{T}=\beta E_{T-1}[\theta'_{T}H_{T}\theta_{T}-2\theta'_{T}h_{T}+c_{T}+x'_{T}J_{T}x_{T}]\\
+s.t.\ \theta_{T}=A_{T}\theta_{T-1}+C_{T}x_{T}+b_{T}+u_{T}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituting the law of motion into the objective function, the value function
+ in period 
+\begin_inset Formula $T$
+\end_inset
+
+ becomes:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{eqnarray*}
+V_{T} & = & \beta E_{T-1}[(A_{T}\theta_{T-1}+C_{T}x_{T}+b_{T}+u_{T})'H_{T}(A_{T}\theta_{T-1}+C_{T}x_{T}+b_{T}+u_{T})-2(A_{T}\theta_{T-1}+C_{T}x_{T}+b_{T}+u_{T})'h_{T}+c_{T}+x'_{T}J_{T}x_{T}]\\
+ & = & \beta E_{T-1}[x'_{T}C_{T}'H_{T}C_{T}x_{T}+x'_{T}C_{T}'H_{T}(A_{T}\theta_{T-1}+b_{T}+u_{T})+(A_{T}\theta_{T-1}+b_{T}+u_{T})'H_{T}C_{T}x_{T}+...\\
+ &  & +(A_{T}\theta_{T-1}+b_{T}+u_{T})'H_{T}(A_{T}\theta_{T-1}+b_{T}+u_{T})-2x'_{T}C'_{T}h_{T}-2(A_{T}\theta_{T-1}+b_{T}+u_{T})'h_{T}+c_{T}+x'_{T}J_{T}x_{T}]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then, the first order condition with respect to 
+\begin_inset Formula $x_{T}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial V_{T}}{\partial x_{T}} & = & \beta E_{T-1}[2C_{T}'H_{T}C_{T}\hat{x}_{T}+2C_{T}'H_{T}(A_{T}\theta_{T-1}+b_{T}+u_{T})-2C'_{T}h_{T}+2J_{T}\hat{x}_{T}]=0\\
+ &  & \beta[2C_{T}'H_{T}C_{T}\hat{x}_{T}+2C_{T}'H_{T}(A_{T}\theta_{T-1}+b_{T})-2C'_{T}h_{T}+2J_{T}x_{T}]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we assume that 
+\begin_inset Formula $E_{T-1}[u_{T}]=0$
+\end_inset
+
+, then:
+\begin_inset Formula 
+\[
+C_{T}'H_{T}C_{T}\hat{x}_{T}+C_{T}'H_{T}(A_{T}\theta_{T-1}+b_{T})-C'_{T}h_{T}+J_{T}\hat{x}_{T}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So:
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{x}_{T} & = & (C'_{T}H_{T}C_{T}+J_{T})^{-1}(C'_{T}h_{T})-(C'_{T}H_{T}C_{T}+J_{T})^{-1}C'_{T}H'_{T}(A_{T}\theta_{T-1}+b_{T})\\
+ & = & -(C'_{T}H_{T}C_{T}+J_{T})^{-1}C'_{T}H'_{T}A_{T}\theta_{T-1}+(C'_{T}H_{T}C_{T}+J_{T})^{-1}(C'_{T}h_{T})-(C'_{T}H_{T}C_{T}+J_{T})^{-1}C'_{T}H'_{T}b_{T}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define:
+\begin_inset Formula 
+\begin{eqnarray*}
+G_{T} & \equiv & -(C'_{T}H_{T}C_{T}+J_{T})^{-1}C'_{T}H'_{T}A_{T}\\
+g_{T} & \equiv & (C'_{T}H_{T}C_{T}+J_{T})^{-1}(C'_{T}h_{T})-(C'_{T}H_{T}C_{T}+J_{T})^{-1}C'_{T}H'_{T}b_{T}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, 
+\begin_inset Formula 
+\[
+\hat{x}_{T}=G_{T}\theta_{T-1}+g_{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Compute 
+\begin_inset Formula $G_{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Substitute 
+\begin_inset Formula $\hat{x}_{T}$
+\end_inset
+
+ into the law of motion, we get:
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\theta}_{T} & = & A_{T}\theta_{T-1}+C_{T}(G_{T}\theta_{T-1}+g_{T})+b_{T}+u_{T}\\
+ & = & (A_{T}+C_{T}G_{T})\theta_{T-1}+C_{T}g_{T}+b_{T}+u_{T}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And substitute 
+\begin_inset Formula $\hat{\theta}_{T}$
+\end_inset
+
+ into the objective function, we get:
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{V}_{T} & = & \beta E_{T-1}[((A_{T}+C_{T}G_{T})\theta_{T-1}+C_{T}g_{T}+b_{T}+u_{T})'H_{T}((A_{T}+C_{T}G_{T})\theta_{T-1}+C_{T}g_{T}+b_{T}+u_{T})+...\\
+ &  & -2((A_{T}+C_{T}G_{T})\theta_{T-1}+C_{T}g_{T}+b_{T}+u_{T})'h_{T}+c_{T}+\hat{x}'_{T}J_{T}\hat{x}_{T}]\\
+ & = & \beta E_{T-1}[\theta'_{T-1}(A_{T}+C_{T}G_{T})'H_{T}(A_{T}+C_{T}G_{T})\theta_{T-1}+2\theta'_{T-1}(A_{T}+C_{T}G_{T})'H_{T}(C_{T}g_{T}+b_{T})+...\\
+ &  & +(C_{T}g_{T}+b_{T}+u_{T})'H_{T}(C_{T}g_{T}+b_{T}+u_{T})-2\theta'_{T-1}(A_{T}+C_{T}G_{T})'h_{T}+...\\
+ &  & -2(C_{T}g_{T}+b_{T})'h_{T}+c_{T}+(G_{T}\theta_{T-1}+g_{T})'J_{T}(G_{T}\theta_{T-1}+g_{T})]\\
+ & = & \beta[\theta'_{T-1}\left((A_{T}+C_{T}G_{T})'H_{T}(A_{T}+C_{T}G_{T})+G'_{T}J_{T}G_{T}\right)\theta_{T-1}+...\\
+ &  & +2\theta'_{T-1}\left((A_{T}+C_{T}G_{T})'H_{T}(C_{T}g_{T}+b_{T})-(A_{T}+C_{T}G_{T})'h_{T}+G'_{T}J_{T}g_{T}\right)+...\\
+ &  & +(C_{T}g_{T}+b_{T})'H_{T}(C_{T}g_{T}+b_{T})-2(C_{T}g_{T}+b_{T})'h_{T}+c_{T}+g'_{T}J_{T}g_{T}]+\beta tr(H_{T}E_{T-1}(u_{T}u'_{T}))
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here the assumption 
+\begin_inset Formula $E_{T-1}[u_{T}]=0$
+\end_inset
+
+ has been applied again.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 6:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The maximization problem in period 
+\begin_inset Formula $T-1$
+\end_inset
+
+ is:
+\begin_inset Formula 
+\begin{gather*}
+\underset{x_{T-1}}{max}\ V_{T-1}=\beta E_{T-2}\left[-(\theta_{T-1}-a_{T-1})'Q_{T-1}(\theta_{T-1}-a_{T-1})-x_{T-1}'R_{T-1}x_{T-1}+\hat{V}_{T}\right]\\
+s.t.\ \ \theta_{T-1}=A_{T-1}\theta_{T-2}+C_{T-1}x_{T-1}+b_{T-1}+u_{T-1}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituting 
+\begin_inset Formula $\hat{V}_{T}$
+\end_inset
+
+ into the objective function, the value function in period 
+\begin_inset Formula $T-1$
+\end_inset
+
+ is:
+\begin_inset Formula 
+\begin{eqnarray*}
+V_{T-1} & = & \beta E_{T-2}\{-\theta'_{T-1}Q_{T-1}\theta_{T-1}+2\theta'_{T-1}Q_{T-1}a_{T-1}-a'_{T-1}Q_{T-1}a_{T-1}-x_{T-1}'R_{T-1}x_{T}+...\\
+ &  & +\beta\theta'_{T-1}\left((A_{T}+C_{T}G_{T})'H_{T}(A_{T}+C_{T}G_{T})+G'_{T}J_{T}G_{T}\right)\theta_{T-1}\\
+ &  & +2\beta\theta'_{T-1}\left((A_{T}+C_{T}G_{T})'H_{T}(C_{T}g_{T}+b_{T})-(A_{T}+C_{T}G_{T})'h_{T}+G'_{T}J_{T}g_{T}\right)\\
+ &  & +\beta\left((C_{T}g_{T}+b_{T})'H_{T}(C_{T}g_{T}+b_{T})-2(C_{T}g_{T}+b_{T})'h_{T}+c_{T}+g'_{T}J_{T}g_{T}\right)\\
+ &  & +\beta tr(H_{T}E_{T-1}(u_{T}u'_{T}))\}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{eqnarray*}
+H_{T-1} & \equiv & -Q_{T-1}+\beta\left((A_{T}+C_{T}G_{T})'H_{T}(A_{T}+C_{T}G_{T})+G'_{T}J_{T}G_{T}\right)\\
+h_{T-1} & \equiv & -Q_{T-1}a_{T-1}-\beta\left((A_{T}+C_{T}G_{T})'H_{T}(C_{T}g_{T}+b_{T})-(A_{T}+C_{T}G_{T})'h_{T}+G'_{T}J_{T}g_{T}\right)\\
+c_{T-1} & \equiv & -a'_{T-1}Q_{T-1}a_{T-1}+\beta\left((C_{T}g_{T}+b_{T})'H_{T}(C_{T}g_{T}+b_{T})-2(C_{T}g_{T}+b_{T})'h_{T}+c_{T}+g'_{T}J_{T}g_{T}\right)+\beta tr(H_{T}E_{T-1}(u_{T}u'_{T}))\\
+J_{T-1} & \equiv & -R_{T-1}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $H_{T-1}$
+\end_inset
+
+ is also symmetric.
+\end_layout
+
+\begin_layout Standard
+Compute 
+\begin_inset Formula $H_{T-1},\ h_{T-1},\ c_{T-1},\ J_{T-1}$
+\end_inset
+
+ accordingly.
+\end_layout
+
+\begin_layout Standard
+Then the maximization problem can be represented as follows:
+\begin_inset Formula 
+\begin{gather*}
+\underset{x_{T-1}}{max}\ V_{T-1}=\beta E_{T-2}[\theta'_{T-1}H_{T-1}\theta_{T-1}-2\theta'_{T-1}h_{T-1}+c_{T-1}+x'_{T-1}J_{T-1}x_{T-1}]\\
+s.t.\ \theta_{T-1}=A_{T-1}\theta_{T-2}+C_{T-1}x_{T-1}+b_{T-1}+u_{T-1}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This maximization problem is exactly in the same format as in period 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ To solve it, we can simply repeat step 5.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 7:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Repeat steps 4 and 5 for each period, we get 
+\begin_inset Formula $H_{t},\ h_{t},\ C_{t},\ J_{t},\ G_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{t}$
+\end_inset
+
+ for each period 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 8:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Plugging in 
+\begin_inset Formula $G_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{t}$
+\end_inset
+
+ and using the initial endowments of the children, we could back out 
+\begin_inset Formula $\hat{x}_{1},...,\hat{x}_{T}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Step 9:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Use the results in step 8 as the initial guesses and repeat the whole process
+ until 
+\begin_inset Formula $\hat{x}_{1},...,\hat{x}_{T}$
+\end_inset
+
+ converge.
+\end_layout
+
+\begin_layout Subsection*
+The optimal regulator problem with a quadratic return function and linear
+ transition functions
+\end_layout
+
+\begin_layout Standard
+Consider the Cobb-Douglas human capital production functions, which are
+ similar to the ones used in Del Boca, Flinn and Wiswall (2012):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+k_{C,t} & = & \beta_{C,t}(k_{C,t-1})^{\alpha_{C,t,1}}(k_{N,t-1})^{\alpha_{C,t,2}}(I_{t})^{\alpha_{C,t,3}}(h_{t})^{\alpha_{C,t,4}}exp(\epsilon_{C,t})\\
+k_{N,t} & = & \beta_{N,t}(k_{C,t-1})^{\alpha_{N,t,1}}(k_{N,t-1})^{\alpha_{N,t,2}}(I_{t})^{\alpha_{N,t,3}}(h_{t})^{\alpha_{N,t,4}}exp(\epsilon_{N,t})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then taking logarithm on both sides, we have:
+\begin_inset Formula 
+\[
+\theta_{t}=A_{t}\theta_{t-1}+B_{t}x_{t}+b_{t}+\eta_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\theta_{t}$
+\end_inset
+
+ is defined as the logarithm of the vector of skills at time 
+\begin_inset Formula $t$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\theta_{t}=(\theta_{C,t},\theta_{N,t})=(lnk_{C,t},lnk_{N,t})$
+\end_inset
+
+.
+ And:
+\begin_inset Formula 
+\begin{eqnarray*}
+A_{t} & \equiv & \left[\begin{array}{cc}
+\alpha_{C,t,1} & \alpha_{C,t,2}\\
+\alpha_{N,t,1} & \alpha_{N,t,2}
+\end{array}\right]\\
+B_{t} & \equiv & \left[\begin{array}{cc}
+\alpha_{C,t,3} & \alpha_{C,t,4}\\
+\alpha_{N,t,3} & \alpha_{N,t,4}
+\end{array}\right]\\
+b_{t} & \equiv & \left[\begin{array}{c}
+ln\beta_{C,t}\\
+ln\beta_{N,t}
+\end{array}\right]\\
+\eta_{t} & \equiv & \left[\begin{array}{c}
+\epsilon_{C,t}\\
+\epsilon_{N,t}
+\end{array}\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is clear that this setup is simply a special case of the nonlinear setup
+ discussed above, and thus we could apply the same procedures as above only
+ by skipping steps 1,2 and 9.
+\end_layout
+
+\end_body
+\end_document
